@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<jsp:useBean id="manager" class="com.javabeans.Manager" scope="session"></jsp:useBean>
+<jsp:useBean id="student" class="com.javabeans.Student" scope="session"></jsp:useBean>
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
@@ -30,7 +30,7 @@
 					class="button button-little bg-yellow" href="login.jsp">注销登录</a>
 				</span>
 				<ul class="nav nav-inline admin-nav">
-           		  <li><a href="manager_add_student.jsp" > 信息添加</a>
+					<li><a href="manager_add_student.jsp" > 信息添加</a>
             		<ul><li class="active"><a href="manager_add_student.jsp">添加学生</a></li>
             		<li><a href="manager_add_teacher.jsp">添加教师</a></li>
             		<li><a href="manager_add_class.jsp">添加班级</a></li>
@@ -51,9 +51,7 @@
 	            		<li><a href="manager_password.jsp">管理员密码修改</a></li>
 	            	    <li><a href="manager_teacher_password.jsp">教师密码修改</a></li>
 	            	    <li><a href="manager_student_password.jsp">学生密码修改</a></li></ul>
-            		</ul>
-            	</li>
-            </ul> 
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -66,15 +64,15 @@
 			<div class="tab-body">
 				<br />
 				<div class="tab-panel active" id="tab-set">
-					<form action="ManagerPasswordServlet" method="post" class="form-x" >
+					<form action="ManagerStudentPasswordServlet" method="post" class="form-x" >
 						<div class="form-group">
 							<div class="label">
-								<label for="old_password">旧密码：</label>
+								<label for="sno">学生学号：</label>
 							</div>
 							<div class="field">
-								<input type="password" class="input" id="old_password"
-									name="old_password" size="30" style="width: 100px"
-									placeholder="原先的密码" data-validate="required:请填写你原先的密码" />
+								<input type="text" class="input" id="sno"
+									name="sno" size="30" style="width: 100px"
+									placeholder="学号" data-validate="required:请填写学生学号" />
 							</div>
 						</div>
 						<div class="form-group">
@@ -84,7 +82,7 @@
 							<div class="field">
 								<input type="password" class="input" id="new_password"
 									name="new_password" size="30" style="width: 100px"
-									placeholder="新密码" data-validate="required:请填写你新的密码" />
+									placeholder="新密码" data-validate="required:请填写新的密码" />
 							</div>
 						</div>
 						<div class="form-button">
