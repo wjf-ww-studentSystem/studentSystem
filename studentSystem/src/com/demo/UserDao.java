@@ -382,6 +382,29 @@ public class UserDao{
 			}
 		}
 		
+		//学生选课后 在成绩表中 添加信息
+			public boolean addStuCredit(Score score){
+				String sql ="INSERT INTO `a_credit`(`sno`, `sname`, `term`, `cname`, `ctime`,  `credit`) VALUES (?,?,?,?,?,?) ";
+				try {
+					conn = dbUtil.getConnection();
+				    pstmt = conn.prepareStatement(sql);
+					pstmt.setString(1, score.getSno());
+					pstmt.setString(2, score.getSname());
+					pstmt.setString(3, score.getTerm());
+					pstmt.setString(4, score.getCname());
+					pstmt.setInt(5, 0);
+					pstmt.setInt(6, 0);
+					pstmt.executeUpdate();
+					return true;
+				} catch (SQLException se) {
+					se.printStackTrace();
+					return false;
+				}finally{
+					dbUtil.close(null,pstmt, conn);
+				}
+			}
+				
+		
 		//学生退课后 在成绩表中 删除信息
 				public boolean deleteStuScore(Score score){
 					String sql ="DELETE FROM `a_score` where sno=? AND cno = ? AND term = ?  ";
@@ -668,12 +691,18 @@ public class UserDao{
 			sql = "SELECT *" + " FROM a_score " + "WHERE tno = ?"
 					+ " AND cname=?"+" AND term=? AND sname = ? "+" ORDER BY score DESC";
 		}
+		if(sname == null && sname == null && tno==null && cname == null){
+			sql = "SELECT *" + " FROM a_score " ;
+		}
 		try {
 			conn = dbUtil.getConnection();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1,tno);
 			pstmt.setString(2,cname);
 			pstmt.setString(3,term);
+			if(sname != null && sname != ""){
+				pstmt.setString(4,sname);
+			}
 			if(sname != null && sname != ""){
 				pstmt.setString(4, sname);
 			}
@@ -787,7 +816,7 @@ public class UserDao{
 				student.setSno(rst.getString("sno"));
 				student.setSname(rst.getString("sname"));
 				student.setSsex(rst.getString("ssex"));
-				student.setSage(rst.getInt("age"));
+				student.setSage(rst.getInt("sage"));
 				student.setSorigin(rst.getString("sorigin"));
 				student.setScredit(rst.getInt("scredit"));
 				student.setScno(rst.getString("scno"));

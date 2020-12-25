@@ -18,6 +18,7 @@ public class AddStudentServlet extends HttpServlet {
 		UserDao dao = new UserDao();
 		Student student = new Student();
 		String message=null;
+		String hidden = request.getParameter("hideParameter");
 		try{
 			student.setSno(request.getParameter("sno"));
 			student.setSpassword(request.getParameter("spassword"));
@@ -40,7 +41,13 @@ public class AddStudentServlet extends HttpServlet {
 			message = "<li>插入学生信息错误！</li>";
 		}
 		request.setAttribute("result", message);
-		RequestDispatcher rd=request.getRequestDispatcher("/manager_add_student.jsp");
+		RequestDispatcher rd = null;
+		if(hidden.equals("teacher")) {
+			rd =request.getRequestDispatcher("/teacher_add_student.jsp");
+		}else{
+			rd=request.getRequestDispatcher("/manager_add_student.jsp");
+		}
+		
 		rd.forward(request, response);
 	}
 

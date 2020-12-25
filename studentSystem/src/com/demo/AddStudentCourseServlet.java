@@ -53,6 +53,7 @@ public class AddStudentCourseServlet extends HttpServlet {
 			
 			boolean success=dao.addStudentCourse(studentCourse);
 			boolean success2 =dao.addStuScore(score);
+			boolean success3 = dao.addStuCredit(score);
 			if(success && success2)
 			{
 				message = "<li>成功插入课程信息！</li>";

@@ -44,6 +44,8 @@
 					<li><a href="input_student_score.jsp" >教师管理</a>
 						<ul>
 							<li><a href="input_student_score.jsp">学生成绩输入</a></li>
+							<li ><a href="update_student_password.jsp">学生密码修改</a></li>
+							<li ><a href="teacher_add_student.jsp">添加学生</a></li>
 						</ul></li>
 			</div>
 <div class="admin">

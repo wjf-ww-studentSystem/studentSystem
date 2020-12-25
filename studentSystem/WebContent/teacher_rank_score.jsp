@@ -44,12 +44,16 @@
 						<ul>
 							<li class="active"><a href="teacher_rank_score.jsp">学生成绩查询</a></li>
 							<li><a href="teacher_search_course.jsp">教师任课查询</a></li>
-							<li><a href="teacher_class_course.jsp">课程开设查询</a></li>
+							
 						</ul></li>
 					<li><a href="input_student_score.jsp" >教师管理</a>
 						<ul>
 							<li><a href="input_student_score.jsp">学生成绩输入</a></li>
+							<li ><a href="update_student_password.jsp">学生密码修改</a></li>
+							<li ><a href="teacher_add_student.jsp">添加学生</a></li>
+							
 						</ul></li>
+						</ul>
 			</div>
 
 
@@ -57,7 +61,6 @@
 			<%
 				ArrayList<Course> courseList = (ArrayList<Course>) session.getAttribute("courseList");
 				ArrayList<String> courseTermList = (ArrayList<String>) session.getAttribute("courseTermList");
-			
 			%>
 
 			<div class="admin">
@@ -115,7 +118,7 @@
 										</tr>
 										<%
 											ArrayList<Score> scoreList = (ArrayList<Score>) session.getAttribute("scoreList");
-											if (scoreList != null) {
+											if (scoreList != null && scoreList.size()>0) {
 												for (Score score : scoreList) {
 													if(score.getTno().equals(teacher.getTno())){
 										%>

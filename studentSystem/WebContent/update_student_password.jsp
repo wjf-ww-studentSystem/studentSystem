@@ -30,21 +30,24 @@
 					class="button button-little bg-yellow" href="login.jsp">注销登录</a>
 				</span>
 				<ul class="nav nav-inline admin-nav">
-					<li class="active"><a href="student_infomation.jsp" > 个人管理</a>
+					<li ><a href="student_infomation.jsp" > 个人管理</a>
 						<ul>
 							<li><a href="teacher_infomation.jsp">教师信息</a></li>
-							<li class="active"><a href="teacher_password.jsp">修改密码</a></li>
+							<li ><a href="teacher_password.jsp">修改密码</a></li>
 						</ul></li>
 					<li><a href="teacher_rank_score.jsp" >教师查询</a>
 						<ul>
 							<li><a href="teacher_rank_score.jsp">学生成绩查询</a></li>
 							<li><a href="teacher_search_course.jsp">教师任课查询</a></li>
-							<li><a href="teacher_class_course.jsp">课程开设查询</a></li>
+							
 						</ul></li>
-					<li><a href="input_student_score.jsp" >教师管理</a>
+					<li class="active"><a href="input_student_score.jsp" >教师管理</a>
 						<ul>
 							<li><a href="input_student_score.jsp">学生成绩输入</a></li>
+							<li class="active"><a href="input_student_score.jsp">学生成绩输入</a></li>
+							<li ><a href="teacher_add_student.jsp">添加学生</a></li>
 						</ul></li>
+						</ul>
 			</div>
 <div class="admin">
 

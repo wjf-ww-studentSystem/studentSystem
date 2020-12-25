@@ -47,6 +47,7 @@
 						<ul>
 							<li><a href="input_student_score.jsp">学生成绩输入</a></li>
 						</ul></li>
+						</ul>
 			</div>
 
 

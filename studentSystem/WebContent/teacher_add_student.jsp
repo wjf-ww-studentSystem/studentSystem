@@ -29,23 +29,26 @@
                 <a class="button button-little bg-yellow" href="login.jsp">注销登录</a>
             </span>
            <ul class="nav nav-inline admin-nav">
-           		 <li class="active"><a href="manager_add_student.jsp" > 信息添加</a>
-            		<ul><li class="active"><a href="manager_add_student.jsp">添加学生</a></li>
-            		<li><a href="manager_add_teacher.jsp">添加教师</a></li>
-            		<li><a href="manager_add_class.jsp">添加班级</a></li>
-            		<li><a href="manager_add_course.jsp">添加课程</a></li></ul>
-            	</li>
-            	<li ><a href="manager_delete_student.jsp" >信息删除</a>
-            	    <ul><li class="active"><a href="manager_delete_student.jsp">删除学生</a></li>
-            	    <li><a href="manager_delete_teacher.jsp">删除教师</a></li>
-            	    <li><a href="manager_delete_class.jsp">删除班级</a></li>
-            	    <li><a href="manager_delete_course.jsp">删除课程</a></li></ul>
-            	</li>
-            	<li><a href="search_student_area.jsp">查询学生信息</a></li>
-            	<li><a href="search_techer.jsp" >查询老师信息</a></li>
-            	<li  ><a href="search_class.jsp" >查询班级信息</a></li>
-            	<li ><a href="search_course.jsp" class="icon-search">课程查询</a></li>
-            	<li><a href="manager_password.jsp" >修改密码</a></li>
+           			<li ><a href="student_infomation.jsp" > 个人管理</a>
+						<ul>
+							<li><a href="teacher_infomation.jsp">教师信息</a></li>
+							<li ><a href="teacher_password.jsp">修改密码</a></li>
+						</ul>
+					</li>
+					<li><a href="teacher_rank_score.jsp" >教师查询</a>
+						<ul>
+							<li><a href="teacher_rank_score.jsp">学生成绩查询</a></li>
+							<li><a href="teacher_search_course.jsp">教师任课查询</a></li>
+							
+						</ul>
+					</li>
+					<li class="active"><a href="input_student_score.jsp" >教师管理</a>
+						<ul>
+							<li><a href="input_student_score.jsp">学生成绩输入</a></li>
+							<li><a href="input_student_score.jsp">学生成绩输入</a></li>
+							<li class="active"><a href="teacher_add_student.jsp">添加学生</a></li>
+						</ul>
+					</li>
             </ul> 	 	
         </div>
         <div class="admin">
@@ -138,7 +141,7 @@
 									placeholder="班级编号" data-validate="required:请填写班级编号" />
 							</div>
 						</div>
-						<input type="hidden" id="hideParameter" name="hideParameter" value = "manager">
+						<input type="hidden" id="hideParameter" name="hideParameter" value = "teacher">
 						<div class="form-button">
 							<button class="button bg-main" type="submit">提交</button>
 						</div>

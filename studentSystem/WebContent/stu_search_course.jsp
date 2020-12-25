@@ -98,7 +98,7 @@
 								<td align="left"><%=course.getTname()%></td>
 								<td align="left">
 								<%
-											if( course.getChecked() == 0){
+											if( course.getChecked() != null && course.getChecked() == 0){
 										%>
 											<form action="AddStudentCourseServlet" method="post" >
 												<input type = "hidden" name="sno" value = "<%=student.getSno() %>">

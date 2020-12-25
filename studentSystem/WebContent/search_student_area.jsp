@@ -15,8 +15,10 @@
 <script src="js/pintuer.js"></script>
 <script src="js/respond.js"></script>
 <script src="js/admin.js"></script>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 <link type="image/x-icon" href="/favicon.ico" rel="shortcut icon" />
 <link href="/favicon.ico" rel="bookmark icon" />
+
 </head>
 
 <body>
@@ -70,7 +72,8 @@
 								<th>性别</th>
 								<th>年龄</th>
 								<th>班级编号</th>
-
+								<th>学分</th>
+								<th>操作</th>
 							</tr>
 							<%
 								ArrayList<Student> studentList = (ArrayList<Student>) session.getAttribute("studentList");
@@ -83,6 +86,23 @@
 								<td align="left"><%=stu.getSsex()%></td>
 								<td align="left"><%=stu.getSage()%></td>
 								<td align="left"><%=stu.getScno()%></td>
+								<td align="left"><%=stu.getScredit()%></td>
+								<td align="left">
+									<input type="submit" id="btn1" name="Submit3" value="修改" />
+								</td>
+							</tr>
+							<tr>
+								
+								<td align="left"><input type="readonly" value=<%=stu.getSno() %>></td>
+								<td align="left"><%=stu.getSname()%></td>
+								<td align="left"><%=stu.getSsex()%></td>
+								<td align="left"><%=stu.getSage()%></td>
+								<td align="left"><%=stu.getScno()%></td>
+								<td align="left"><%=stu.getScredit()%></td>
+								<td align="left">
+									<input type="submit" id="btn2" name="Submit3" value="确定" />
+								</td>
+							
 							</tr>
 							<%
 								}
@@ -94,4 +114,6 @@
 			</div>
 		</div>
 </body>
+
+
 </html>

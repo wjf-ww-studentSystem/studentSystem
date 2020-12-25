@@ -99,6 +99,9 @@ public class LoginServlet extends HttpServlet {
 				dbUtil.close(rst,pstmt,connection);
 			}
 			
+			ArrayList<Score> scoreList = new ArrayList<Score>();
+			request.getSession().setAttribute("scoreList", scoreList);
+			
 			ArrayList<String> termList = dao.search_course_term();
 			request.getSession().setAttribute("courseTermList", termList);
 			ArrayList<Course> courseList = userDao.getCourses();

@@ -55,7 +55,7 @@ public class AddScoreServlet extends HttpServlet {
 		//查询学生学分
 		int StudentCredit = dao.findStudentCredit(request.getParameter("sno"));
 		//查询课程学分
-		int CourseCredit = dao.findCourseCreditByCno(request.getParameter("sno"));
+		int CourseCredit = dao.findCourseCreditByCno(request.getParameter("cno"));
 		//修改学生学分
 		dao.updateCredit(request.getParameter("sno"), StudentCredit + CourseCredit );
 		
